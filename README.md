@@ -19,7 +19,7 @@ The list of features are just my personal take of what should be changed to make
 ## Installation
 
 1. Download [UE4SS 2.5.2](https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/v2.5.2) (get both `UE4SS_Standard_v2.5.2.zip` and `UE4SS_Xinput_v2.5.2.zip`).
-2. Make a backup of the game's _executable folder_ (`\steamapps\common\MadeInAbyss-BSFD\MadeInAbyss-BSFD\Binaries\Win64`).
+2. Make a backup of the game's _executable folder_ (`\steamapps\common\MadeInAbyss-BSFD\MadeInAbyss-BSFD\Binaries\Win64`). This is so that you can revert the game back to a clean slate in case something happens.
 3. Extract `UE4SS_Standard_v2.5.2.zip` into the _executable folder_.
 4. In `UE4SS_Xinput_v2.5.2.zip`, take `xinput1_3.dll` and put it into the _executable folder_.
 5. Download/clone this repository, or grab the latest release.
@@ -32,7 +32,7 @@ After doing the above the mod injector (UE4SS) and this mod itself (AbyssDeep) s
 > [!CAUTION]
 > This mod is experimental and might cause your game to crash during gameplay. Please stock up on Mail Balloons and save regularly.
 
-This mod should only affect gameplay, so your saves should be fine, but I'm not 100% sure. **Please create backups always.**
+This mod only affects gameplay, so your saves should be unaffected regardless if you have the mod or not, but I'm not 100% sure. **Please create backups always.**
 
 ### Uninstalling
 
