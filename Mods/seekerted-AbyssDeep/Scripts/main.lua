@@ -23,9 +23,9 @@ local function HookBP_EnemyCoreLogic_C(New_BP_EnemyCoreLogic_C)
 				BP_EnemyCoreLogic_C__OnSpawned)
 	else
 		-- When new MIAEnemyBase objects are created, only fire if its outer class is PersistentLevel
-		NotifyOnNewObject("/Script/MadeInAbyss.MIAEnemyBase", function(NewMIAEnemyBase)
-			if NewMIAEnemyBase:IsValid() and "PersistentLevel" == NewMIAEnemyBase:GetOuter():GetFName():ToString() then
-				HookBP_EnemyCoreLogic_C(NewMIAEnemyBase)
+		NotifyOnNewObject("/Script/MadeInAbyss.MIAEnemyBase", function(New_MIAEnemyBase)
+			if New_MIAEnemyBase:IsValid() and "PersistentLevel" == New_MIAEnemyBase:GetOuter():GetFName():ToString() then
+				HookBP_EnemyCoreLogic_C(New_MIAEnemyBase)
 			end
 		end)
 	end
