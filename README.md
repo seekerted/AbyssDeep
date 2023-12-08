@@ -18,12 +18,11 @@ The list of features are just my personal take of what should be changed to make
 
 ## Installation
 
-1. Download [UE4SS 2.5.2](https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/v2.5.2) (get both `UE4SS_Standard_v2.5.2.zip` and `UE4SS_Xinput_v2.5.2.zip`).
-2. Make a backup of the game's _executable folder_ (`\steamapps\common\MadeInAbyss-BSFD\MadeInAbyss-BSFD\Binaries\Win64`). This is so that you can revert the game back to a clean slate in case something happens.
-3. Extract `UE4SS_Standard_v2.5.2.zip` into the _executable folder_.
-4. In `UE4SS_Xinput_v2.5.2.zip`, take `xinput1_3.dll` and put it into the _executable folder_.
-5. Download/clone this repository, or grab the latest release.
-6. Paste all the files into the _executable folder_.
+1. Download [UE4SS Experimental Release v2.5.2-439](https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental) (`UE4SS_v2.5.2-439-g3cea237.zip`).
+1. Make a backup of the game's _executable folder_ (`\steamapps\common\MadeInAbyss-BSFD\MadeInAbyss-BSFD\Binaries\Win64`). This is so that you can revert the game back to a clean slate in case something happens.
+1. Extract `UE4SS_v2.5.2-439-g3cea237.zip` into the _executable folder_.
+1. Grab the latest release of this repository, or just download/clone.
+1. In your copy of the repository, paste all the files inside the top folder into the _executable folder_.
 
 ## Usage
 
@@ -38,7 +37,7 @@ This mod only affects gameplay, so your saves should be unaffected regardless if
 
 To disable just the mod but keep UE4SS, delete `Mods\seekerted-AbyssDeep\enabled.txt`. To re-enable the mod, just re-create it (it's an empty text file).
 
-To uninstall everything, simply revert the _executable folder_ back to the state before you pasted everything in (or deleting `xinput1_3.dll` and `ue4ss.dll` should suffice).
+To uninstall everything, simply revert the _executable folder_ back to the state before you pasted everything in (or just deleting `xinput1_3.dll` should suffice).
 
 ### Customizing features
 
@@ -56,6 +55,10 @@ Special thanks to:
 ## Changelog
 
 ```
+0.4.0
+- Fix code for detecting new instances of MIAEnemyBase
+- Upgraded UE4SS version to experimental 439, to simplify installation process and remove the need for custom AOB for FName_ToString.
+
 0.3.6
 - Madokajacks cannot detect you
 - Tweaked the rate of raid enemies spawning.
