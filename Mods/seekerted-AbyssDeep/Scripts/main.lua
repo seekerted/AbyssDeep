@@ -16,16 +16,21 @@ local function BP_EnemyCoreLogic_C__OnSpawned(Param_BP_EnemyCoreLogic_C, Param_b
 end
 
 -- Hook into BP_EnemyCoreLogic_C instance (hot-reload friendly)
-local function HookMIAEnemyBase(New_MIAEnemyBase)
-	if New_MIAEnemyBase:IsValid() then
-		-- MIAEnemyBase found
+local function HookBP_EnemyCoreLogic_C(New_BP_EnemyCoreLogic_C)
+	if New_BP_EnemyCoreLogic_C:IsValid() then
+		-- BP_EnemyCoreLogic_C found
 		Utils.RegisterHookOnce("/Game/MadeInAbyss/Core/Characters/Enemy/BP_EnemyCoreLogic.BP_EnemyCoreLogic_C:OnSpawned",
 				BP_EnemyCoreLogic_C__OnSpawned)
 	else
-		NotifyOnNewObject("/Script/MadeInAbyss.MIAEnemyBase", HookMIAEnemyBase)
+		-- When new MIAEnemyBase objects are created, only fire if its outer class is PersistentLevel
+		NotifyOnNewObject("/Script/MadeInAbyss.MIAEnemyBase", function(NewMIAEnemyBase)
+			if NewMIAEnemyBase:IsValid() and "PersistentLevel" == NewMIAEnemyBase:GetOuter():GetFName():ToString() then
+				HookBP_EnemyCoreLogic_C(NewMIAEnemyBase)
+			end
+		end)
 	end
 end
-HookMIAEnemyBase(FindFirstOf("MIAEnemyBase"))
+HookBP_EnemyCoreLogic_C(FindObject("BP_EnemyCoreLogic_C", "PersistentLevel"))
 
 -- Called when a level has been successfully loaded and everything (I think)
 local function BP_MIAGameInstance_C__OnSuccess_884D(Param_BP_MIAGameInstance_C)
