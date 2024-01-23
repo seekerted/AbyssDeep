@@ -1,8 +1,6 @@
 local Utils = require("utils")
 
-Utils.Log("Starting MiA:BSFD QOL Mod by Ted the Seeker")
-Utils.Log(string.format("Version %s", Utils.ModVer))
-Utils.Log(_VERSION)
+Utils.Init("seekerted", "AbyssDeep", "0.4.0")
 
 local F_NerfSpawnRaid = require("f_nerf_spawn_raid")
 local F_NerfMadokajacks = require("f_nerf_madokajacks")
