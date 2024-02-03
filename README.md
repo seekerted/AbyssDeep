@@ -16,36 +16,24 @@ The list of features are just my personal take of what should be changed to make
 - [ ] Make meeting Nanachi mandatory
 - [ ] *Other tasks that I can think of (many of them were softlocks that I just don't remember atm)*
 
+> [!WARNING]
+> AND OTHER WARNING This mod is experimental and might cause your game to crash during gameplay. Please stock up on Mail Balloons and save regularly.
+
 ## Installation
 
-If you've already installed UE4SS previously (maybe from another one of my mods?) you can skip to the mod part.
+Get and install this mod via Nexus Mods and Vortex (guide also in the link): LINK TO NEXUS PAGE
 
-### Install UE4SS
+## Manual / Advanced Installation
 
-1. Download [UE4SS Experimental Release v2.5.2-570](https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/experimental) (`UE4SS_v2.5.2-570-g37e727b.zip`).
-1. Make a backup of the game's _executable folder_ (`\steamapps\common\MadeInAbyss-BSFD\MadeInAbyss-BSFD\Binaries\Win64`). This is so that you can revert the game back to a clean slate in case something happens.
-1. Extract `UE4SS_v2.5.2-570-g37e727b.zip` into the _executable folder_.
-
-### Install this mod
-
-1. Grab the latest release of this repository, or just download/clone.
-1. In your copy of the repository, paste all the files inside the top folder into the _executable folder_.
-	- If it asks if you want to overwrite files, as long as it's not in the `Mods` folder, then it's fine, it doesn't matter.
-
-## Usage
-
-After doing the above the mod injector (UE4SS) and this mod itself (AbyssDeep) should be installed and you can just run the game.
-
-> [!CAUTION]
-> This mod is experimental and might cause your game to crash during gameplay. Please stock up on Mail Balloons and save regularly.
-
-This mod only affects gameplay, so your saves should be unaffected regardless if you have the mod or not, but I'm not 100% sure. **Please create backups always.**
+1. Get and install UE4SS by following the instructions on this page here: <https://seekerted.github.io/MiABSFD-UE4SS-Guide/>
+1. Grab the latest release of this mod.
+1. Extract and paste the files into the _executable folder_.
 
 ### Uninstalling
 
-To disable just the mod but keep UE4SS, delete `Mods\seekerted-AbyssDeep\enabled.txt`. To re-enable the mod, just re-create it (it's an empty text file).
+To disable just the mod but keep UE4SS, delete `Mods\<this mod's folder>\enabled.txt`. To re-enable the mod, just re-create it (it's an empty text file).
 
-To uninstall everything, simply revert the _executable folder_ back to the state before you pasted everything in (or just deleting `xinput1_3.dll` should suffice).
+To uninstall everything, simply revert the _executable folder_ back to the state before you pasted everything in.
 
 ### Customizing features
 
