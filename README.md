@@ -17,11 +17,11 @@ The list of features are just my personal take of what should be changed to make
 - [ ] *Other tasks that I can think of (many of them were softlocks that I just don't remember atm)*
 
 > [!WARNING]
-> AND OTHER WARNING This mod is experimental and might cause your game to crash during gameplay. Please stock up on Mail Balloons and save regularly.
+> This mod is experimental and might cause your game to crash during gameplay. Please stock up on Mail Balloons and save regularly.
 
 ## Installation
 
-Get and install this mod via Nexus Mods and Vortex (guide also in the link): LINK TO NEXUS PAGE
+Get and install this mod via Nexus Mods and Vortex (guide also in the link): (todo)
 
 ## Manual / Advanced Installation
 
