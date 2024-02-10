@@ -1,12 +1,17 @@
 local Utils = require("utils")
+local Bugfix = require("bugfix")
 
-Utils.Init("seekerted", "AbyssDeep", "0.4.0")
+Utils.Init("seekerted", "AbyssDeep", "0.5.0")
 
 local F_NerfSpawnRaid = require("f_nerf_spawn_raid")
 local F_NerfMadokajacks = require("f_nerf_madokajacks")
 
 F_NerfSpawnRaid.SetEnabled(true)
 F_NerfMadokajacks.SetEnabled(true)
+
+local GI = nil
+
+local MAP_NO_SEEKER_CAMP = 16
 
 -- Called every time an enemy is spawned
 local function BP_EnemyCoreLogic_C__OnSpawned(Param_BP_EnemyCoreLogic_C, Param_bIsBeginPlay)
@@ -39,8 +44,17 @@ end
 local function HookMIAGameInstance(New_MIAGameInstance)
 	if New_MIAGameInstance:IsValid() then
 		-- MIAGameInstance has been found
+		GI = New_MIAGameInstance
+
 		Utils.RegisterHookOnce("/Game/MadeInAbyss/Core/GameModes/BP_MIAGameInstance.BP_MIAGameInstance_C:OnSuccess_884DEFA44E0E3C73A1DE44B096F9A105",
 				BP_MIAGameInstance_C__OnSuccess_884D)
+
+		Utils.RegisterHookOnce("/Game/MadeInAbyss/UI/StageSelect/WBP_StageSelectMap.WBP_StageSelectMap_C:SetEventMark",
+				function(Param_WBP_StageSelectMap_C)
+			if MAP_NO_SEEKER_CAMP == GI.PlayMapNo then
+				Bugfix.FixSeekerCampLabel(Param_WBP_StageSelectMap_C:get())
+			end
+		end)
 	else
 		NotifyOnNewObject("/Script/MadeInAbyss.MIAGameInstance", HookMIAGameInstance)
 	end
