@@ -7,6 +7,10 @@ A quality of life mod for MiABSFD. Internally nicknamed `AbyssDeep`.
 - **Make Madokajacks harmless.** In the 3rd Layer, if you are in certain areas of the wall, the Madokajacks will dive in and aim for you. This stops them from doing that.
 - **Decrease spawn rate of raid enemies.** When you are in a map for too long, the game starts spawning enemies around you. The spawn rate is still too high IMO so this decreases them.
 
+## Bugfixes
+
+- Fix the bug where the Seeker Camp Interior nameplate displays "???" instead of "Seeker Camp".
+
 ### Planned Features
 
 The list of features are just my personal take of what should be changed to make the game less frustrating (based on my gameplay experience).
