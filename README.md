@@ -1,15 +1,13 @@
 # MiABSFD QOL Mod
 
-A quality of life mod for MiABSFD. Internally nicknamed `AbyssDeep`.
+A quality of life mod for MiABSFD. In which I attempt to make changes to the game to make it a tiny bit better to play. I also plan to fix some bugs in the game that I can do something about.
+
+Internally nicknamed `AbyssDeep`.
 
 ## Current Features
 
 - **Make Madokajacks harmless.** In the 3rd Layer, if you are in certain areas of the wall, the Madokajacks will dive in and aim for you. This stops them from doing that.
 - **Decrease spawn rate of raid enemies.** When you are in a map for too long, the game starts spawning enemies around you. The spawn rate is still too high IMO so this decreases them.
-
-## Bugfixes
-
-- Fix the bug where the Seeker Camp Interior nameplate displays "???" instead of "Seeker Camp".
 
 ### Planned Features
 
@@ -19,6 +17,10 @@ The list of features are just my personal take of what should be changed to make
 - [ ] Interactables should not reset (e.g. Glass Layer's stone dominoes) during a trip
 - [ ] Make meeting Nanachi mandatory
 - [ ] *Other tasks that I can think of (many of them were softlocks that I just don't remember atm)*
+
+## Game Bugfixes
+
+- Fix the bug where the Seeker Camp Interior nameplate displays "???" instead of "Seeker Camp".
 
 > [!WARNING]
 > This mod is experimental and might cause your game to crash during gameplay. Please stock up on Mail Balloons and save regularly.
