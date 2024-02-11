@@ -41,11 +41,9 @@ To disable just the mod but keep UE4SS, delete `Mods\<this mod's folder>\enabled
 
 To uninstall everything, simply revert the _executable folder_ back to the state before you pasted everything in.
 
-### Customizing features
+### Disabling features
 
-I've made the mod in a way that you can enable/disable each feature. In the `Mods\seekerted-AbyssDeep\Scripts\main.lua` file, there are lines that say `<feature>.SetEnabled(true)` somewhere near the top or so. Change the `true` to `false` to disable and vice versa.
-
-If you're more of an advanced user you can edit the script.
+I've made the mod in a way that you can disable a feature or bugfix. In the `Mods\seekerted-AbyssDeep\Scripts\main.lua` file, there are lines that say `require("...")`. These are named accordingly and correspond to each feature or bugfix. If you want to disable them, add `-- ` to the beginning of the line (i.e `-- require("...")`).
 
 ## Credits
 
