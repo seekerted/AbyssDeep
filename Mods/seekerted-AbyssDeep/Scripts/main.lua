@@ -1,13 +1,11 @@
 local Utils = require("utils")
 local Bugfix = require("bugfix")
 
-Utils.Init("seekerted", "AbyssDeep", "0.5.0")
+Utils.Init("seekerted", "AbyssDeep", "0.5.1")
 
 local F_NerfSpawnRaid = require("f_nerf_spawn_raid")
-local F_NerfMadokajacks = require("f_nerf_madokajacks")
 
 F_NerfSpawnRaid.SetEnabled(true)
-F_NerfMadokajacks.SetEnabled(true)
 
 local GI = nil
 
@@ -35,19 +33,11 @@ local function HookBP_EnemyCoreLogic_C(New_BP_EnemyCoreLogic_C)
 end
 HookBP_EnemyCoreLogic_C(FindObject("BP_EnemyCoreLogic_C", "PersistentLevel"))
 
--- Called when a level has been successfully loaded and everything (I think)
-local function BP_MIAGameInstance_C__OnSuccess_884D(Param_BP_MIAGameInstance_C)
-	F_NerfMadokajacks.OnLevelSuccess(Param_BP_MIAGameInstance_C:get())
-end
-
 -- Hook into BP_MIAGameInstance_C instance (hot-reload friendly)
 local function HookMIAGameInstance(New_MIAGameInstance)
 	if New_MIAGameInstance:IsValid() then
 		-- MIAGameInstance has been found
 		GI = New_MIAGameInstance
-
-		Utils.RegisterHookOnce("/Game/MadeInAbyss/Core/GameModes/BP_MIAGameInstance.BP_MIAGameInstance_C:OnSuccess_884DEFA44E0E3C73A1DE44B096F9A105",
-				BP_MIAGameInstance_C__OnSuccess_884D)
 
 		Utils.RegisterHookOnce("/Game/MadeInAbyss/UI/StageSelect/WBP_StageSelectMap.WBP_StageSelectMap_C:SetEventMark",
 				function(Param_WBP_StageSelectMap_C)
@@ -60,3 +50,5 @@ local function HookMIAGameInstance(New_MIAGameInstance)
 	end
 end
 HookMIAGameInstance(FindFirstOf("MIAGameInstance"))
+
+require("features.nerf_madokajacks")
