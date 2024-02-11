@@ -1,3 +1,7 @@
+local Utils = require("utils")
+
+Utils.Log("Enabled Feature: Nerf Madokajacks")
+
 -- The Great Fault, Trapped Pirate Ship, Quadruple Pit, and Rock Slide Hall
 local MAPS_WITH_MADOKAJACKS = {21, 22, 25, 28}
 
@@ -25,17 +29,26 @@ local function DoesMapHaveMadokajack(MapNo)
 	return false
 end
 
+-- Apply hook to the Madokajack's AI only when in a map with Madokajacks and if we haven't hooked yet.
+-- This is because the BTTask_FlyingRail_C isn't really available until then.
+local function BP_MIAGameInstance_C__OnSuccess_A025(Param_BP_MIAGameInstance_C)
+	if not HasHooked and DoesMapHaveMadokajack(Param_BP_MIAGameInstance_C:get().PlayMapNo) then
+		Utils.Log("Applying hook to BTTask_FlyingRail_C:ReceiveExecuteAI()")
+
+		RegisterHook("/Game/MadeInAbyss/Enemies/1160Onituchibashi/AI/BTTask_FlyingRail.BTTask_FlyingRail_C:ReceiveExecuteAI",
+				BTTask_FlyingRail_C__ReceiveExecuteAI)
+
+		HasHooked = true
+	end
+end
+
 -- Hook into BP_MIAGameInstance_C instance (hot-reload friendly)
 local function HookMIAGameInstance(New_MIAGameInstance)
 	if New_MIAGameInstance:IsValid() then
 		-- MIAGameInstance has been found
 
-		if not HasHooked and DoesMapHaveMadokajack(New_MIAGameInstance.PlayMapNo) then
-			RegisterHook("/Game/MadeInAbyss/Enemies/1160Onituchibashi/AI/BTTask_FlyingRail.BTTask_FlyingRail_C:ReceiveExecuteAI",
-					BTTask_FlyingRail_C__ReceiveExecuteAI)
-
-			HasHooked = true
-		end
+		RegisterHook("/Game/MadeInAbyss/Core/GameModes/BP_MIAGameInstance.BP_MIAGameInstance_C:OnSuccess_A02554634B6C75B4B65022A3C3C5C24D",
+				BP_MIAGameInstance_C__OnSuccess_A025)
 	else
 		NotifyOnNewObject("/Script/MadeInAbyss.MIAGameInstance", HookMIAGameInstance)
 	end
