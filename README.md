@@ -1,4 +1,4 @@
-# MiABSFD QOL Mod
+# MiABSFD QoL Mod
 
 A quality of life mod for MiABSFD. In which I attempt to make changes to the game to make it a tiny bit better to play. I also plan to fix some bugs in the game that I can do something about.
 
@@ -6,7 +6,7 @@ Internally nicknamed `AbyssDeep`.
 
 ## Current Features
 
-- **Make Madokajacks harmless.** In the 3rd Layer, if you are in certain areas of the wall, the Madokajacks will dive in and aim for you. This stops them from doing that.
+- **Nerf Madokajacks.** When Madokajacks fly to attack you, their speed has been decreased by 30% and their turning rate has also been decreased. This way you should be able to evade them faster.
 - **Decrease spawn rate of raid enemies.** When you are in a map for too long, the game starts spawning enemies around you. The spawn rate is still too high IMO so this decreases them.
 
 ### Planned Features
