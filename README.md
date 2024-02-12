@@ -8,6 +8,7 @@ Internally nicknamed `AbyssDeep`.
 
 - **Nerf Madokajacks.** When Madokajacks fly to attack you, their speed has been decreased by 30% and their turning rate has also been decreased. This way you should be able to evade them faster.
 - **Decrease spawn rate of raid enemies.** When you are in a map for too long, the game starts spawning enemies around you. The spawn rate is still too high IMO so this decreases them.
+- **English subtitles during the intro theme song.** Why not?
 
 ### Planned Features
 
