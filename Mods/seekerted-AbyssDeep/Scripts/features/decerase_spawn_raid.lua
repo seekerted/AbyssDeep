@@ -4,6 +4,8 @@ Utils.Log("Enabled Feature: Decrease spawn raid")
 
 local SpawnFailRate = 0.85
 
+local HasHooked = false
+
 -- Called every time an enemy is spawned
 local function BP_EnemyCoreLogic_C__OnSpawned(Param_BP_EnemyCoreLogic_C, Param_bIsBeginPlay)
 	local BP_EnemyCoreLogic_C = Param_BP_EnemyCoreLogic_C:get()
@@ -17,14 +19,11 @@ local function BP_EnemyCoreLogic_C__OnSpawned(Param_BP_EnemyCoreLogic_C, Param_b
 	end
 end
 
--- Hook into BP_EnemyCoreLogic_C instance (hot-reload friendly)
-local function HookBP_EnemyCoreLogic_C(New_BP_EnemyCoreLogic_C)
-	if New_BP_EnemyCoreLogic_C:IsValid() then
-		-- BP_EnemyCoreLogic_C found
+-- Called every time the Game State is initialized, but only push through if in the Abyss, as that's the only time
+-- the function is available (or just to be sure)
+RegisterInitGameStatePostHook(function(Param_AGameStateBase)
+	if HasHooked or Param_AGameStateBase:get():GetClass():GetFName():ToString() ~= "BP_AbyssGameMode_C" then return end
 
-		RegisterHook("/Game/MadeInAbyss/Core/Characters/Enemy/BP_EnemyCoreLogic.BP_EnemyCoreLogic_C:OnSpawned", BP_EnemyCoreLogic_C__OnSpawned)
-	else
-		NotifyOnNewObject("/Script/MadeInAbyss.MIAEnemyBase", HookBP_EnemyCoreLogic_C)
-	end
-end
-HookBP_EnemyCoreLogic_C(FindObject("BP_EnemyCoreLogic_C", "PersistentLevel"))
+    RegisterHook("/Game/MadeInAbyss/Core/Characters/Enemy/BP_EnemyCoreLogic.BP_EnemyCoreLogic_C:OnSpawned", BP_EnemyCoreLogic_C__OnSpawned)
+	HasHooked = true
+end)
