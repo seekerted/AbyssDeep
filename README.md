@@ -21,7 +21,7 @@ The list of features are just my personal take of what should be changed to make
 
 ## Game Bugfixes
 
-- Fix the bug where the Seeker Camp Interior nameplate displays "???" instead of "Seeker Camp".
+- The Seeker Camp Interior nameplate now says "Seeker Camp".
 
 > [!WARNING]
 > This mod is experimental and might cause your game to crash during gameplay. Please stock up on Mail Balloons and save regularly.
