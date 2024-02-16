@@ -1,6 +1,6 @@
 local Utils = require("utils")
 
-Utils.Init("seekerted", "AbyssDeep", "0.6.0")
+Utils.Init("seekerted", "AbyssDeep", "0.6.4")
 
 -- Features
 require("features.nerf_madokajacks")
