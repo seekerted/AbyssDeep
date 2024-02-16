@@ -1,4 +1,4 @@
--- Ted the Seeker's utils.lua 2024-01-24
+-- Ted the Seeker's utils.lua 2024-02-16
 local Utils = {}
 
 local RegisteredHooks = {}
@@ -6,6 +6,8 @@ local RegisteredHooks = {}
 Utils.ModName = nil
 Utils.ModAuthor = nil
 Utils.ModVer = nil
+
+Utils.GI = nil
 
 -- Init values and start
 function Utils.Init(Author, Name, Ver)
@@ -70,5 +72,9 @@ function Utils.PrintTable(Table)
 	Str = Str .. "}"
 	Utils.Log(Str)
 end
+
+ExecuteInGameThread(function()
+	Utils.GI = FindFirstOf("BP_MIAGameInstance_C")
+end)
 
 return Utils
